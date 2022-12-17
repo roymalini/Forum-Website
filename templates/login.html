@@ -1,0 +1,44 @@
+{% load static %}
+
+<!-- Modal -->
+<div class="modal fade" id="LogIn" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" id="modalCenter">
+        <div class="modal-content" id="finalBoxLogin">
+            <div class="modal-body" id="finalBody" >
+                <div class="close-button-login" onclick="hideLogin()"><img src="{% static 'img/close.png' %}"
+                        width="36px" height="36px"></div>
+                <form class="register-form" id="login-form-id">
+                    {% csrf_token %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="right col-sm" >
+                                Username<span style="color: red;"> *</span> :
+                            </div>
+                            <div class="input-center col-sm">
+                                <input type="text" name="Username" id="username-signin" class="input-tabs-login">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="right col-sm">
+                                Password<span style="color: red;"> *</span> :
+                            </div>
+                            <div class="input-center col-sm">
+                                <input type="password" name="password" id="password" class="input-tabs-login">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center" id="login_error" style="color:red;display:none;">
+                        <b>Username or password is incorrect</b>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                    <button type="submit" class="btn RegisterButtonLogin" value="login">Log in</button>
+                    </div>
+                </form>
+                <div class="lastInModel">
+                    <p onclick="showRegister()" style="cursor: pointer;">Create Account</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
